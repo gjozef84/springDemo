@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Delete person</title>
+</head>
+<body>
+<div th:replace="utils/navbar :: main_navbar"></div>
+
+
+<h2>Do you really want to delete</h2>
+<h2 th:text="${personToDelete}+' ?'">person</h2>
+<a th:href="@{'/persons/delete/' + ${personToDelete.id}}">Yes</a>&nbsp;&nbsp;<a th:href="@{/persons}">No</a>
+
+</body>
+</html>

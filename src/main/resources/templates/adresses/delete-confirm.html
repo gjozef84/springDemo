@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Delete adresses</title>
+</head>
+<body>
+
+<div th:replace="utils/navbar :: main_navbar"></div>
+
+<h2>Do you really want to delete</h2>
+<h2 th:text="${adressToDelete}+' ?'">adress</h2>
+<a th:href="@{'/address/delete/' + ${adressToDelete.id}}">Yes</a>&nbsp;&nbsp;<a th:href="@{/all-addresses}">No</a>
+
+</body>
+</html>

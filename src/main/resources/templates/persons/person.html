@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Person</title>
+</head>
+<body>
+
+<!--<h1>Person info</h1>
+<h3 th:text="${data.name}">name: </h3>
+<h3 th:text="${data.surname}">surname:</h3>
+
+<h3 th:text="${data.adress.city}">city:</h3>
+<h3 th:text="${data.adress.street}">street:</h3>
+<h3 th:text="${data.adress.strNumber}">str number:</h3>-->
+
+<div class="container">
+    <h2>Persons info</h2>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Adress</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${data.name}">name</td>
+            <td th:text="${data.surname}">surname</td>
+            <td th:text="${data.adress.city}+${data.adress.street}+${data.adress.strNumber}">adress</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

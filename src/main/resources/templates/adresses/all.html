@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Show all adresses</title>
+</head>
+<body>
+<div th:replace="utils/navbar :: main_navbar"></div>
+
+<div class="container">
+    <h2>Adres info</h2>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>City</th>
+            <th>Street</th>
+            <th>Number</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="adress : ${adresses}">
+            <td th:text="${adress.id}">name</td>
+            <td th:text="${adress.city}">name</td>
+            <td th:text="${adress.street}">surname</td>
+            <td th:text="${adress.strNumber}">adress</td>
+            <td><a th:href="@{'/address/edit/' + ${adress.id}}">Edit</a></td>
+            <td><a th:href="@{'/address/delete-confirmation/' + ${adress.id}}">Delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="table table-striped">
+        <tbody>
+        <tr><a th:href="@{'/address/add-adress/'}">Add new adress</a></tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
